@@ -9,15 +9,24 @@
 #import "StepperViewController.h"
 
 @implementation StepperViewController
+@synthesize theStepper, stepperTextLabel, delegate, step;
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+        NSLog(@"step viewdidload %d", step);
+    [self setStep:step];
+    [self.theStepper setValue:step];
+    self.stepperTextLabel.text = [[NSString alloc]initWithFormat:@"%d", (int)step];
 }
-*/
+
+- (IBAction)doStep:(UIStepper *)sender {
+    self.stepperTextLabel.text = [[NSString alloc]initWithFormat:@"%d", (int)sender.value];
+}
 
 - (IBAction)save:(UIButton *)sender {
+    self.step = self.theStepper.stepValue;
+    [self.delegate updateStepperValueInArray:step];
+    [self.navigationController popViewControllerAnimated:true];
 }
 @end

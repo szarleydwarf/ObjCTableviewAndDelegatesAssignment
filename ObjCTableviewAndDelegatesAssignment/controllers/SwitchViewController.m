@@ -13,7 +13,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        NSLog(@"switch viewdidload %d", isOn);
     [self setIsOn:isOn];
     [self.theSwitcher setOn:isOn];
 }

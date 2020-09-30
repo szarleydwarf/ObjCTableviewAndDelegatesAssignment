@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property int step;
 
+- (IBAction)doStep:(UIStepper *)sender;
 - (IBAction)save:(UIButton *)sender;
 - (void)setStep:(int)step;
 @end

@@ -38,7 +38,11 @@
     
 }
 
--(void)updateSwitchValueInArray: (BOOL) isOn {
+- (void)updateStepperValueInArray:(int)step {
+    
+}
+
+- (void)updateSwitchValueInArray: (BOOL) isOn {
     NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
 //    NSLog(@"indexPath %ld > %@ %d", updateIndex, uiControllers[updateIndex], isOn);
     NSString*isOnString = @"true";
@@ -60,7 +64,10 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController* otherViewController;
     if(indexPath.row == 0) {
-        
+        StepperViewController*stepperViewController = [storyboard instantiateViewControllerWithIdentifier:@"StepperViewController"];
+        stepperViewController.delegate = self;
+        stepperViewController.step = 10;
+        otherViewController = stepperViewController;
     } else if(indexPath.row == 1){
         SwitchViewController* switchViewCtrl = [storyboard instantiateViewControllerWithIdentifier:@"SwitchViewController"];
         

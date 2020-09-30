@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SwitchViewController.h"
+#import "StepperViewController.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate, StepperViewControllerDelegate>
 
 
 @end
