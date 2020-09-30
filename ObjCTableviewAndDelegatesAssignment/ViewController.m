@@ -39,12 +39,22 @@
 }
 
 - (void)updateStepperValueInArray:(int)step {
+        NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSString* toInsert = [[NSString alloc] initWithFormat:
+                                        @"%d", step];
+    NSLog(@"indexPath %ld > %@ %d", updateIndex, uiControllers[updateIndex], step);
+    NSMutableArray*t = uiControllers[updateIndex];
+    [t replaceObjectAtIndex:1 withObject:toInsert];
     
+    [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
+    
+    [self.mainTableview reloadData];
+
 }
 
 - (void)updateSwitchValueInArray: (BOOL) isOn {
     NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
-//    NSLog(@"indexPath %ld > %@ %d", updateIndex, uiControllers[updateIndex], isOn);
+
     NSString*isOnString = @"true";
     if(!isOn){
         isOnString = @"false";
