@@ -17,6 +17,7 @@
 		D77217FC252503E800B1B98F /* SwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77217FB252503E800B1B98F /* SwitchViewController.m */; };
 		D77217FF252524B900B1B98F /* StepperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77217FE252524B900B1B98F /* StepperViewController.m */; };
 		D79F8B582525DF9A0083BBFB /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */; };
+		D79F8B5B2525E6350083BBFB /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79F8B5A2525E6350083BBFB /* SliderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		D77217FE252524B900B1B98F /* StepperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepperViewController.m; sourceTree = "<group>"; };
 		D79F8B562525DF9A0083BBFB /* TextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
 		D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
+		D79F8B592525E6350083BBFB /* SliderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
+		D79F8B5A2525E6350083BBFB /* SliderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				D77217FE252524B900B1B98F /* StepperViewController.m */,
 				D79F8B562525DF9A0083BBFB /* TextFieldViewController.h */,
 				D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */,
+				D79F8B592525E6350083BBFB /* SliderViewController.h */,
+				D79F8B5A2525E6350083BBFB /* SliderViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				D79F8B582525DF9A0083BBFB /* TextFieldViewController.m in Sources */,
 				D77217FF252524B900B1B98F /* StepperViewController.m in Sources */,
 				D77217E72524D66700B1B98F /* ViewController.m in Sources */,
+				D79F8B5B2525E6350083BBFB /* SliderViewController.m in Sources */,
 				D77217E12524D66700B1B98F /* AppDelegate.m in Sources */,
 				D77217F22524D66C00B1B98F /* main.m in Sources */,
 				D77217FC252503E800B1B98F /* SwitchViewController.m in Sources */,

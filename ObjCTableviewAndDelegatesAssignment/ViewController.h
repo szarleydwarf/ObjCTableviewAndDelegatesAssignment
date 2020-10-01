@@ -10,8 +10,9 @@
 #import "SwitchViewController.h"
 #import "StepperViewController.h"
 #import "TextFieldViewController.h"
+#import "SliderViewController.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate, StepperViewControllerDelegate, TextFieldViewControllerDelegate>
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate, StepperViewControllerDelegate, TextFieldViewControllerDelegate, SliderViewControllerDelegate>
 
 
 @end

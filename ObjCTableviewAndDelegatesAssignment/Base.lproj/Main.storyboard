@@ -109,6 +109,57 @@
             </objects>
             <point key="canvasLocation" x="1751" y="120"/>
         </scene>
+        <!--Slider View Controller-->
+        <scene sceneID="uTI-wM-l7i">
+            <objects>
+                <viewController storyboardIdentifier="SliderViewController" id="Ovw-IG-GZw" customClass="SliderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SLy-mp-TQP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-eA-7UA">
+                                <rect key="frame" x="10" y="94" width="394" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" minimumValueImage="minus.rectangle" catalog="system" maximumValueImage="plus.rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-44-BZd">
+                                <rect key="frame" x="38" y="158" width="338" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="Ovw-IG-GZw" eventType="valueChanged" id="nSq-aX-vUK"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPb-xe-aME">
+                                <rect key="frame" x="152.5" y="228" width="109" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save &amp; Back"/>
+                                <connections>
+                                    <action selector="save:" destination="Ovw-IG-GZw" eventType="touchUpInside" id="L62-fs-g8H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dPb-xe-aME" firstAttribute="centerX" secondItem="dJn-44-BZd" secondAttribute="centerX" id="4Xw-Lc-pop"/>
+                            <constraint firstItem="Xv4-Ji-DEQ" firstAttribute="trailing" secondItem="WfP-eA-7UA" secondAttribute="trailing" constant="10" id="8Eb-pu-l8D"/>
+                            <constraint firstItem="Xv4-Ji-DEQ" firstAttribute="trailing" secondItem="dJn-44-BZd" secondAttribute="trailing" constant="40" id="FsW-gb-4SD"/>
+                            <constraint firstItem="dJn-44-BZd" firstAttribute="top" secondItem="WfP-eA-7UA" secondAttribute="bottom" constant="40" id="FyP-xF-JAQ"/>
+                            <constraint firstItem="WfP-eA-7UA" firstAttribute="leading" secondItem="Xv4-Ji-DEQ" secondAttribute="leading" constant="10" id="Sxb-gg-xR3"/>
+                            <constraint firstItem="WfP-eA-7UA" firstAttribute="top" secondItem="Xv4-Ji-DEQ" secondAttribute="top" constant="50" id="eHd-By-Q2n"/>
+                            <constraint firstItem="dJn-44-BZd" firstAttribute="leading" secondItem="Xv4-Ji-DEQ" secondAttribute="leading" constant="40" id="h9D-L2-UXH"/>
+                            <constraint firstItem="dPb-xe-aME" firstAttribute="top" secondItem="dJn-44-BZd" secondAttribute="bottom" constant="40" id="rh2-R8-FPd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xv4-Ji-DEQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="sliderValueLabel" destination="WfP-eA-7UA" id="7kU-AM-U8i"/>
+                        <outlet property="theSlider" destination="dJn-44-BZd" id="QFx-lR-1Rn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yik-Um-DLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2422" y="120"/>
+        </scene>
         <!--Stepper View Controller-->
         <scene sceneID="7Ap-1N-Jaz">
             <objects>
@@ -216,4 +267,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus.rectangle" catalog="system" width="64" height="46"/>
+        <image name="plus.rectangle" catalog="system" width="64" height="46"/>
+    </resources>
 </document>

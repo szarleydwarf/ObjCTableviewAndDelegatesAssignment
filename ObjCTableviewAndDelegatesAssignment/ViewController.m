@@ -38,11 +38,24 @@
     
 }
 
+- (void) updateSliderValueInArray:(NSString *)sliderValue {
+    NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSString* toInsert = [[NSString alloc] initWithFormat:
+                                        @"%@", sliderValue];
+    NSLog(@"indexPath %ld > %@ %@", updateIndex, uiControllers[updateIndex], sliderValue);
+    NSMutableArray*t = uiControllers[updateIndex];
+    [t replaceObjectAtIndex:1 withObject:toInsert];
+    
+    [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
+    
+    [self.mainTableview reloadData];
+
+}
+
 - (void)updateTextFieldValueInArray:(NSString *)text{
-        NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
     NSString* toInsert = [[NSString alloc] initWithFormat:
                                         @"%@", text];
-    NSLog(@"indexPath %ld > %@ %@", updateIndex, uiControllers[updateIndex], text);
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
@@ -56,7 +69,6 @@
         NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
     NSString* toInsert = [[NSString alloc] initWithFormat:
                                         @"%d", step];
-    NSLog(@"indexPath %ld > %@ %d", updateIndex, uiControllers[updateIndex], step);
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
@@ -108,7 +120,13 @@
         textFieldViewController.delegate = self;
         textFieldViewController.text = uiControllers[2][1];
         otherViewController = textFieldViewController;
+    } else if (indexPath.row == 3){
+        SliderViewController*sliderViewController = [storyboard instantiateViewControllerWithIdentifier:@"SliderViewController"];
+        sliderViewController.delegate = self;
+        sliderViewController.sliderValue = uiControllers[3][1];
+        otherViewController = sliderViewController;
     }
+    
 //    NSLog(@"row selected %@", [[uiControllers objectAtIndex:indexPath.row]objectAtIndex:1]);
 
     [self.navigationController pushViewController:otherViewController animated:YES];
