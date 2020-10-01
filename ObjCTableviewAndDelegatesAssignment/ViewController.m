@@ -13,7 +13,6 @@
 @property NSMutableArray*uiControllers;
 
 -(void)populateArray;
-
 @end
 
 @implementation ViewController
@@ -24,7 +23,7 @@
     NSMutableArray*t2 = [[NSMutableArray alloc]initWithObjects:@"UISwitch",@"true", nil];
     NSMutableArray*t3 = [[NSMutableArray alloc]initWithObjects:@"UITextfield",@"defaulttext", nil];
     NSMutableArray*t4 = [[NSMutableArray alloc]initWithObjects:@"UISlider",@"10", nil];
-    NSMutableArray*t5 = [[NSMutableArray alloc]initWithObjects:@"UISegmentedControl",@"", nil];
+    NSMutableArray*t5 = [[NSMutableArray alloc]initWithObjects:@"UISegmentedControl",@"Hey", nil];
     NSMutableArray*t6 = [[NSMutableArray alloc]initWithObjects:@"DatePicker",@"6/7/1978", nil];
     NSMutableArray*t7 = [[NSMutableArray alloc]initWithObjects:@"PickerView",@"", nil];
     
@@ -35,59 +34,75 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self populateArray];
+}
+
+- (void) updateValueInArray:(NSString *)value {
+    NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSLog(@"updateValueInArray %ld > %@ %@", updateIndex, uiControllers[updateIndex], value);
+}
+
+- (void)updateSegmentValueInArray:(NSString*) value {
+  
+    NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSString* toInsert = [[NSString alloc] initWithFormat:
+                          @"%@", value];
+    NSLog(@"indexPath %ld > %@ %@", updateIndex, uiControllers[updateIndex], value);
+    NSMutableArray*t = uiControllers[updateIndex];
+    [t replaceObjectAtIndex:1 withObject:toInsert];
     
+    [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
+    
+    [self.mainTableview reloadData];
 }
 
 - (void) updateSliderValueInArray:(NSString *)sliderValue {
     NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
     NSString* toInsert = [[NSString alloc] initWithFormat:
-                                        @"%@", sliderValue];
-    NSLog(@"indexPath %ld > %@ %@", updateIndex, uiControllers[updateIndex], sliderValue);
+                          @"%@", sliderValue];
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
     [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
     
     [self.mainTableview reloadData];
-
 }
 
 - (void)updateTextFieldValueInArray:(NSString *)text{
     NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
     NSString* toInsert = [[NSString alloc] initWithFormat:
-                                        @"%@", text];
+                          @"%@", text];
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
     [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
     
     [self.mainTableview reloadData];
-
+    
 }
 
 - (void)updateStepperValueInArray:(int)step {
-        NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
     NSString* toInsert = [[NSString alloc] initWithFormat:
-                                        @"%d", step];
+                          @"%d", step];
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
     [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
     
     [self.mainTableview reloadData];
-
+    
 }
 
 - (void)updateSwitchValueInArray: (BOOL) isOn {
     NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
-
+    
     NSString*isOnString = @"true";
     if(!isOn){
         isOnString = @"false";
     }
     
     NSString* toInsert = [[NSString alloc] initWithFormat:
-                                     @"%@", isOnString];
+                          @"%@", isOnString];
     NSMutableArray*t = uiControllers[updateIndex];
     [t replaceObjectAtIndex:1 withObject:toInsert];
     
@@ -125,10 +140,13 @@
         sliderViewController.delegate = self;
         sliderViewController.sliderValue = uiControllers[3][1];
         otherViewController = sliderViewController;
+    } else if (indexPath.row == 4) {
+        SegmentedViewController* segmentedViewController = [storyboard instantiateViewControllerWithIdentifier:@"SegmentedViewController"];
+        segmentedViewController.delegate = self;
+        segmentedViewController.segmentValue = uiControllers[4][1];
+        otherViewController = segmentedViewController;
     }
     
-//    NSLog(@"row selected %@", [[uiControllers objectAtIndex:indexPath.row]objectAtIndex:1]);
-
     [self.navigationController pushViewController:otherViewController animated:YES];
 }
 

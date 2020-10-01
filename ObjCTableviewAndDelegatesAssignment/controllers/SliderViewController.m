@@ -28,6 +28,8 @@
 
 - (IBAction)save:(UIButton *)sender {
     self.sliderValue = self.sliderValueLabel.text;
+    
+    
     [self.delegate updateSliderValueInArray:self.sliderValue];
     [self.navigationController popViewControllerAnimated:true];
 }

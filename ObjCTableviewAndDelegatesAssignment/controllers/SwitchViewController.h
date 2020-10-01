@@ -11,8 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol SwitchViewControllerDelegate <NSObject>
+
 @required
 -(void)updateSwitchValueInArray: (BOOL) isOn;
+
 @end
 
 @interface SwitchViewController : UIViewController

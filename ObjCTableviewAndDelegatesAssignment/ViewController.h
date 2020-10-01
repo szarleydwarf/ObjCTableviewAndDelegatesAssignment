@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SwitchViewController.h"
-#import "StepperViewController.h"
-#import "TextFieldViewController.h"
-#import "SliderViewController.h"
+#import "controllers/SwitchViewController.h"
+#import "controllers/StepperViewController.h"
+#import "controllers/TextFieldViewController.h"
+#import "controllers/SliderViewController.h"
+#import "controllers/SegmentedViewController.h"
 
-@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate, StepperViewControllerDelegate, TextFieldViewControllerDelegate, SliderViewControllerDelegate>
 
+@interface ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, SwitchViewControllerDelegate, StepperViewControllerDelegate, TextFieldViewControllerDelegate, SliderViewControllerDelegate,SegmentedViewControllerDelegate>
+
+-(void)updateValueInArray:(NSString*)value;
 
 @end
 

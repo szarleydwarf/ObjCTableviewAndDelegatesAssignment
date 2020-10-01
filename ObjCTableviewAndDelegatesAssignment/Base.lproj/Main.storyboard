@@ -248,6 +248,54 @@
             </objects>
             <point key="canvasLocation" x="1751" y="-543"/>
         </scene>
+        <!--Segmented View Controller-->
+        <scene sceneID="3Ye-wX-Bgy">
+            <objects>
+                <viewController storyboardIdentifier="SegmentedViewController" id="6MR-xT-09d" customClass="SegmentedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5kM-AF-FWN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-U0-kRk">
+                                <rect key="frame" x="30" y="84" width="355" height="32"/>
+                                <segments>
+                                    <segment title="Hello"/>
+                                    <segment title="Hey"/>
+                                    <segment title="Hi"/>
+                                    <segment title="Ciao"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="6MR-xT-09d" eventType="valueChanged" id="TG0-Q1-xJv"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhO-FS-Ybl">
+                                <rect key="frame" x="153" y="193" width="109" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save &amp; Back"/>
+                                <connections>
+                                    <action selector="save:" destination="6MR-xT-09d" eventType="touchUpInside" id="vyo-WG-sRQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ogz-U0-kRk" firstAttribute="top" secondItem="hjb-28-8K2" secondAttribute="top" constant="40" id="EZ6-QN-n8a"/>
+                            <constraint firstItem="LhO-FS-Ybl" firstAttribute="centerX" secondItem="ogz-U0-kRk" secondAttribute="centerX" id="EvU-NU-VAj"/>
+                            <constraint firstItem="LhO-FS-Ybl" firstAttribute="top" secondItem="ogz-U0-kRk" secondAttribute="bottom" constant="78" id="G90-l6-qEz"/>
+                            <constraint firstItem="ogz-U0-kRk" firstAttribute="leading" secondItem="hjb-28-8K2" secondAttribute="leading" constant="30" id="GDd-zz-6e7"/>
+                            <constraint firstItem="LhO-FS-Ybl" firstAttribute="leading" secondItem="hjb-28-8K2" secondAttribute="leading" constant="153" id="Yn7-a2-hRb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hjb-28-8K2"/>
+                    </view>
+                    <connections>
+                        <outlet property="theSegment" destination="ogz-U0-kRk" id="41h-Fc-dNa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8M1-Vp-Hvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2422" y="-543"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kdf-xm-VjR">
             <objects>

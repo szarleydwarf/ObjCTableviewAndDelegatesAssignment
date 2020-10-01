@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 - (IBAction)save:(UIButton *)sender;
-- (void)setSliderValue:(NSString*)sliderValue;
+- (void)setSliderValue:(NSString *)sliderValue;
 @end
 
 NS_ASSUME_NONNULL_END
