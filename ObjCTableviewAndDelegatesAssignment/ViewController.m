@@ -20,7 +20,7 @@
 @synthesize uiControllers;
 
 -(void) populateArray {
-    NSMutableArray*t1 = [[NSMutableArray alloc]initWithObjects:@"UIStepper",@"0", nil];
+    NSMutableArray*t1 = [[NSMutableArray alloc]initWithObjects:@"UIStepper",@"10", nil];
     NSMutableArray*t2 = [[NSMutableArray alloc]initWithObjects:@"UISwitch",@"true", nil];
     NSMutableArray*t3 = [[NSMutableArray alloc]initWithObjects:@"UITextfield",@"defaulttext", nil];
     NSMutableArray*t4 = [[NSMutableArray alloc]initWithObjects:@"UISlider",@"10", nil];
@@ -36,6 +36,20 @@
     [super viewDidLoad];
     [self populateArray];
     
+}
+
+- (void)updateTextFieldValueInArray:(NSString *)text{
+        NSInteger updateIndex = [self.mainTableview indexPathForSelectedRow].row;
+    NSString* toInsert = [[NSString alloc] initWithFormat:
+                                        @"%@", text];
+    NSLog(@"indexPath %ld > %@ %@", updateIndex, uiControllers[updateIndex], text);
+    NSMutableArray*t = uiControllers[updateIndex];
+    [t replaceObjectAtIndex:1 withObject:toInsert];
+    
+    [uiControllers replaceObjectAtIndex:updateIndex withObject:t];
+    
+    [self.mainTableview reloadData];
+
 }
 
 - (void)updateStepperValueInArray:(int)step {
@@ -90,7 +104,10 @@
         switchViewCtrl.delegate = self;
         otherViewController = switchViewCtrl;
     } else if (indexPath.row == 2) {
-        
+        TextFieldViewController* textFieldViewController = [storyboard instantiateViewControllerWithIdentifier:@"TextFieldViewController"];
+        textFieldViewController.delegate = self;
+        textFieldViewController.text = uiControllers[2][1];
+        otherViewController = textFieldViewController;
     }
 //    NSLog(@"row selected %@", [[uiControllers objectAtIndex:indexPath.row]objectAtIndex:1]);
 

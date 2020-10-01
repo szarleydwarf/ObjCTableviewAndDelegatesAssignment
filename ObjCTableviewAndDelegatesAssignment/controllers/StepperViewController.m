@@ -14,7 +14,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        NSLog(@"step viewdidload %d", step);
     [self setStep:step];
     [self.theStepper setValue:step];
     self.stepperTextLabel.text = [[NSString alloc]initWithFormat:@"%d", (int)step];
