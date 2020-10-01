@@ -25,7 +25,7 @@
 }
 
 - (IBAction)save:(UIButton *)sender {
-    self.step = (int)self.stepperTextLabel.text;
+    self.step = [self.stepperTextLabel.text integerValue];
     [self.delegate updateStepperValueInArray:self.step];
     [self.navigationController popViewControllerAnimated:true];
 }
