@@ -89,6 +89,8 @@
         switchViewCtrl.isOn = isOnB;
         switchViewCtrl.delegate = self;
         otherViewController = switchViewCtrl;
+    } else if (indexPath.row == 2) {
+        
     }
 //    NSLog(@"row selected %@", [[uiControllers objectAtIndex:indexPath.row]objectAtIndex:1]);
 

@@ -16,6 +16,7 @@
 		D77217F22524D66C00B1B98F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D77217F12524D66C00B1B98F /* main.m */; };
 		D77217FC252503E800B1B98F /* SwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77217FB252503E800B1B98F /* SwitchViewController.m */; };
 		D77217FF252524B900B1B98F /* StepperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77217FE252524B900B1B98F /* StepperViewController.m */; };
+		D79F8B582525DF9A0083BBFB /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		D77217FB252503E800B1B98F /* SwitchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchViewController.m; sourceTree = "<group>"; };
 		D77217FD252524B900B1B98F /* StepperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StepperViewController.h; sourceTree = "<group>"; };
 		D77217FE252524B900B1B98F /* StepperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepperViewController.m; sourceTree = "<group>"; };
+		D79F8B562525DF9A0083BBFB /* TextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
+		D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				D77217FB252503E800B1B98F /* SwitchViewController.m */,
 				D77217FD252524B900B1B98F /* StepperViewController.h */,
 				D77217FE252524B900B1B98F /* StepperViewController.m */,
+				D79F8B562525DF9A0083BBFB /* TextFieldViewController.h */,
+				D79F8B572525DF9A0083BBFB /* TextFieldViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79F8B582525DF9A0083BBFB /* TextFieldViewController.m in Sources */,
 				D77217FF252524B900B1B98F /* StepperViewController.m in Sources */,
 				D77217E72524D66700B1B98F /* ViewController.m in Sources */,
 				D77217E12524D66700B1B98F /* AppDelegate.m in Sources */,
